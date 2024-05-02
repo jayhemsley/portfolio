@@ -1,52 +1,62 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
+node_modules
+dist/
 
 # next.js
-/.next/
+.next/
 /out/
 
 # production
-/build
+build/
 
-# misc
-.DS_Store
-*.pem
-
-# cache directories
-.cache
-.npm
-.eslintcache
-
-# logs
+# debug
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# diagnostic reports
+*.log*
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# local env files
+# env
+.env.*
 .env
-.env.test
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+!.env.example
 
 # vercel
 .vercel
 
-# VS Code
-.vscode
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
-# Husky
-.husky
+# cache directories
+.cache
+.eslintcache
+.npm
+
+# husky
+.husky/
+
+# linting and tests
+lint-results
+coverage
+/test-results/
+
+# vs code
+.history/
+.vscode/*
+!.vscode/css-custom-data.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+*.code-workspace
+
+# webstorm
+.idea
+
+# misc
+.DS_Store
+*.pem
+*.csv
+
+.env*.local
+_OLD/
