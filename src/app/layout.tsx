@@ -1,6 +1,8 @@
+import { PrismicPreview } from '@prismicio/next';
 import type { Viewport } from 'next';
 
 import { VIEWPORT_COLOR_SCHEME, VIEWPORT_THEME_COLOR } from '@/constants';
+import { repositoryName } from '@/prismicio';
 import { Header } from '@/ui';
 import { cn, createMetadata } from '@/utils';
 
@@ -23,12 +25,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        'h-full bg-secondary-lightest text-base font-normal text-secondary dark:bg-secondary-darkest',
+        'h-full bg-secondary-lightest py-4 text-base font-normal text-secondary-dark selection:bg-primary-darker/75 selection:text-secondary-lightest md:py-8 dark:bg-secondary-darkest dark:text-secondary-lightest',
         MessinaSans.className,
       )}>
-      <body className="h-full">
+      <body>
         <Header />
-        <main className="py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">{children}</main>
+        <main>{children}</main>
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );

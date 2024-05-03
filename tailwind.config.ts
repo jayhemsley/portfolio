@@ -1,6 +1,7 @@
-import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
+import tailwindCss3d from 'tailwindcss-3d';
 import radix from 'tailwindcss-radix';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
@@ -8,9 +9,9 @@ const config: Config = {
     hoverOnlyWhenSupported: true,
   },
   plugins: [
-    typography,
     radix,
-    ({ matchUtilities, theme }) => {
+    tailwindCss3d,
+    plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
           'animation-delay': (value) => ({
@@ -21,9 +22,8 @@ const config: Config = {
           values: theme('transitionDelay'),
         },
       );
-    },
+    }),
   ],
-  darkMode: 'selector',
   theme: {
     extend: {
       animation: {

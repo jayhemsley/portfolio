@@ -78,13 +78,5 @@
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error"
   },
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "no-undef": "off"
-      }
-    }
-  ],
-  "ignorePatterns": [".next/*", ".vercel/*", "build/*", "node_modules/*", "out/*"]
+  "ignorePatterns": ["/*", "!/public", "!/src"]
 }

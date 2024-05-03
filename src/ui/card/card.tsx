@@ -1,43 +1,105 @@
-import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import Tilt from 'react-parallax-tilt';
 import smartquotes from 'smartquotes-ts';
 
 import { cn } from '@/utils';
 
+import {
+  CardDescriptionVariants,
+  CardPreTitleVariants,
+  CardTitleVariants,
+  CardVariants,
+} from './card.variants';
+
 export function Card({
-  client,
+  pretitle,
   title,
   description,
+  variant = 'default',
+  href,
+  image,
+  gradient = 'after:from-primary/80 after:to-accent-pink',
   className,
 }: {
-  client?: string;
-  title?: string;
+  pretitle?: string;
+  title: string;
   description?: string;
+  href: string;
+  image?: string;
+  gradient?: string;
   className?: string;
+  variant?: 'small' | 'default' | 'large';
 }): React.ReactElement {
+  const [backgroundImageIsLoaded, setBackgroundImageIsLoaded] = useState<boolean>(false);
+  const [showDefaultBackground, setShowDefaultBackground] = useState<boolean>(true);
+
   return (
-    <div
-      className={cn([
-        'relative flex w-full cursor-pointer flex-wrap overflow-hidden rounded-2xl bg-black p-8 text-secondary-lightest shadow-primary-dark/75 transition-shadow hover:shadow-xl',
+    <Tilt
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
+      glareEnable
+      glareMaxOpacity={0.25}
+      glarePosition="all"
+      glareBorderRadius="1rem"
+      perspective={5000}
+      transitionEasing="cubic-bezier(0.39, 0.575, 0.565, 1)"
+      transitionSpeed={200}
+      scale={1.01}
+      className={cn(
+        CardVariants({
+          variant,
+        }),
+        'transform-style-3d backface-hidden transform-gpu active:scale-[0.98]',
         className,
-      ])}>
-      {(client || title) && (
-        <div className="mb-16 w-full transition sm:mb-6 md:mb-8">
-          {client && <span className="mb-1 block">{smartquotes(client)}</span>}
-          {title && <h2 className="font-bold drop-shadow">{smartquotes(title)}</h2>}
+      )}>
+      <Link href={href} className="relative block h-full w-full p-8 transform-style-3d lg:p-12">
+        <div className="drop-shadow translate-z-10">
+          {(pretitle || title) && (
+            <div className="mb-4 flex w-11/12 flex-wrap gap-1 transition lg:mb-8">
+              {pretitle && (
+                <span className={cn(CardPreTitleVariants({ variant }))}>
+                  {smartquotes(pretitle)}
+                </span>
+              )}
+              {title && (
+                <h2 className={cn(CardTitleVariants({ variant }))}>{smartquotes(title)}</h2>
+              )}
+            </div>
+          )}
+          {description && (
+            <p className={cn(CardDescriptionVariants({ variant }))}>{smartquotes(description)}</p>
+          )}
         </div>
-      )}
-      {description && (
-        <p className="hidden w-11/12 translate-y-2 opacity-0 transition sm:mb-24 sm:block xl:mb-28">
-          {smartquotes(description)}
-        </p>
-      )}
-      <div className="absolute bottom-8 left-8 mt-auto w-11/12">
-        <span className="align-items-baseline absolute left-0 z-10 inline-flex h-auto translate-y-1/2 border-b-[1px] border-solid border-secondary-lightest opacity-0 transition delay-0">
-          View the case study
-          {' '}
-          <ArrowLongRightIcon className="ml-1 h-4 w-4" />
-        </span>
-      </div>
-    </div>
+        <div
+          className={cn([
+            'absolute left-0 top-0 -z-10 h-full w-full overflow-hidden rounded-2xl before:absolute before:left-0 before:top-0 before:z-10 before:h-1/2 before:w-full before:bg-gradient-to-b before:from-secondary-darkest/75 before:to-transparent before:opacity-100 before:transition-opacity after:absolute after:left-0 after:top-0 after:z-20 after:h-full after:w-full after:bg-gradient-to-br after:opacity-0 after:transition-opacity group-hover:after:opacity-100',
+            showDefaultBackground && 'bg-gradient-to-br from-secondary to-secondary-darkest',
+            gradient,
+          ])}>
+          {image && (
+            <Image
+              src={image}
+              alt=""
+              className={cn([
+                'object-cover object-center transition-all group-hover:duration-[45s] group-hover:scale-150',
+                backgroundImageIsLoaded ? 'scale-1 opacity-100' : 'opacity-0 scale-110',
+              ])}
+              fill
+              onLoad={() => {
+                setBackgroundImageIsLoaded(true);
+
+                setTimeout(() => {
+                  setShowDefaultBackground(false);
+                }, 300);
+              }}
+            />
+          )}
+        </div>
+      </Link>
+    </Tilt>
   );
 }

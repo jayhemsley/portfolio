@@ -1,31 +1,40 @@
+import * as prismic from '@prismicio/client';
+import type { KeyTextField, LinkField } from '@prismicio/client';
 import Link from 'next/link';
 
 import { APP_NAME } from '@/constants';
+import { createClient } from '@/prismicio';
 
-function NavLink({ href, title }: { href: string; title: string }): React.ReactElement {
+function NavLink({
+  link,
+  title,
+}: {
+  link: LinkField;
+  title: string | KeyTextField;
+}): React.ReactElement {
   return (
     <Link
-      className="relative transition-colors hover:text-primary-dark"
-      href={href}
-      target={href.startsWith('http') ? '_blank' : '_self'}>
+      className="relative inline-block border-b-2 border-transparent transition-colors hover:border-white"
+      href={prismic.asLink(link) || '#'}
+      target="_blank">
       {title}
     </Link>
   );
 }
 
-export function Header(): React.ReactElement {
+export async function Header(): Promise<React.ReactElement> {
+  const client = createClient();
+  const navLinks = await client.getSingle('nav');
+
   return (
-    <header className="container sticky top-0 mx-auto w-11/12 justify-between py-4 text-lg sm:flex md:py-8 md:text-xl lg:text-2xl">
-      <Link href="/" className="mb-1 block text-secondary-darkest sm:m-0">
+    <header className="container pointer-events-none sticky top-4 z-50 mx-auto flex w-11/12 flex-wrap justify-between gap-x-8 gap-y-1 text-lg text-white mix-blend-difference sm:flex-nowrap md:top-8 md:text-xl lg:text-2xl">
+      <Link className="pointer-events-auto" href="/">
         {APP_NAME}
       </Link>
-      <nav className="align-items-center flex gap-4 sm:justify-end sm:gap-6 lg:gap-8">
-        <NavLink
-          href="https://drive.google.com/file/d/11nnGAXXAB-Q3A-IPtH5o5YSCD61rQeOh/view?usp=drive_link"
-          title="Résumé"
-        />
-        <NavLink href="https://github.com/jayhemsley" title="GitHub" />
-        <NavLink href="mailto:jay@hemsley.dev?subject=Hello, Let's Work Together!" title="Email" />
+      <nav className="align-items-center pointer-events-auto flex gap-4 sm:justify-end sm:gap-8 md:gap-12">
+        {navLinks?.data?.slices.map((item) => (
+          <NavLink key={item.id} link={item.primary.link} title={item.primary.title} />
+        ))}
       </nav>
     </header>
   );

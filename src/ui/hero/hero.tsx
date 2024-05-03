@@ -1,15 +1,27 @@
-export function Hero(): React.ReactElement {
+import type { KeyTextField } from '@prismicio/client';
+
+export function Hero({
+  title,
+  subtitle,
+}: {
+  title?: string | KeyTextField;
+  subtitle?: string | KeyTextField;
+}): React.ReactElement {
   return (
-    <section className="mb-16 sm:mb-20 md:mb-24 lg:mb-28 xl:mb-32">
+    <section className="py-16 md:py-20 lg:py-24 xl:py-32 2xl:py-40">
       <div className="container flex justify-center">
-        <div className="w-11/12 sm:w-10/12">
-          <h1 className="animate-fade-in-down animation-delay-[600ms] to-accent-pink mb-4 bg-gradient-to-br from-primary bg-clip-text text-5xl font-black text-transparent opacity-0 sm:text-6xl md:mb-6 md:text-7xl lg:text-8xl">
-            Full-Stack Developer Based in Atlanta, GA
-          </h1>
-          <p className="animate-fade-in-down animation-delay-[600ms] mb-4 text-xl/snug font-light opacity-0 md:mb-6 md:text-2xl/snug lg:text-3xl/snug xl:text-4xl/snug">
-            I work with small businesses and public organizations across the world to craft engaging
-            digital experiences.
-          </p>
+        <div className="flex w-11/12 flex-wrap gap-2 sm:w-10/12 sm:gap-4">
+          {title && (
+            <h1 className="bg-gradient-to-br from-primary to-accent-pink bg-clip-text text-5xl/[1.1] font-black text-transparent sm:text-6xl/[1.1] md:text-7xl/[1.1] xl:text-8xl/[1.1] dark:from-primary-light dark:to-accent-pink">
+              {title}
+            </h1>
+          )}
+
+          {subtitle && (
+            <p className="w-11/12 text-xl/snug font-light md:text-2xl/snug lg:w-10/12 lg:text-3xl/snug xl:text-4xl/snug 2xl:w-9/12 dark:text-secondary-lighter">
+              {subtitle}
+            </p>
+          )}
         </div>
       </div>
     </section>
