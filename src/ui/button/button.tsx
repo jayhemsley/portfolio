@@ -1,5 +1,3 @@
-import smartquotes from 'smartquotes-ts';
-
 import { cn } from '@/utils';
 
 export type ButtonProps = {
@@ -8,9 +6,7 @@ export type ButtonProps = {
   icon?: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button({
-  label, className, icon, ...props
-}: ButtonProps): React.ReactElement {
+export function Button({ label, className, icon, ...props }: ButtonProps): React.ReactElement {
   return (
     <button
       type="button"
@@ -19,7 +15,7 @@ export function Button({
         className,
       )}
       {...props}>
-      {smartquotes(label)}
+      {label}
       {icon && <span className="mr-4 flex h-5 w-5 items-center">{icon}</span>}
     </button>
   );

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import Tilt from 'react-parallax-tilt';
-import smartquotes from 'smartquotes-ts';
 
 import { cn } from '@/utils';
 
@@ -57,23 +56,21 @@ export function Card({
         className,
       )}>
       <Link href={href} className="relative block h-full w-full p-8 transform-style-3d lg:p-12">
-        <div className="drop-shadow translate-z-10">
-          {(pretitle || title) && (
-            <div className="mb-4 flex w-11/12 flex-wrap gap-1 transition lg:mb-8">
-              {pretitle && (
-                <span className={cn(CardPreTitleVariants({ variant }))}>
-                  {smartquotes(pretitle)}
-                </span>
-              )}
-              {title && (
-                <h2 className={cn(CardTitleVariants({ variant }))}>{smartquotes(title)}</h2>
-              )}
-            </div>
-          )}
-          {description && (
-            <p className={cn(CardDescriptionVariants({ variant }))}>{smartquotes(description)}</p>
-          )}
-        </div>
+        {(pretitle || title || description) && (
+          <div className="select-none drop-shadow translate-z-10">
+            {(pretitle || title) && (
+              <div className="mb-4 flex w-11/12 flex-wrap gap-1 transition lg:mb-8">
+                {pretitle && (
+                  <span className={cn(CardPreTitleVariants({ variant }))}>{pretitle}</span>
+                )}
+                {title && <h2 className={cn(CardTitleVariants({ variant }))}>{title}</h2>}
+              </div>
+            )}
+            {description && (
+              <p className={cn(CardDescriptionVariants({ variant }))}>{description}</p>
+            )}
+          </div>
+        )}
         <div
           className={cn([
             'absolute left-0 top-0 -z-10 h-full w-full overflow-hidden rounded-2xl before:absolute before:left-0 before:top-0 before:z-10 before:h-1/2 before:w-full before:bg-gradient-to-b before:from-secondary-darkest/75 before:to-transparent before:opacity-100 before:transition-opacity after:absolute after:left-0 after:top-0 after:z-20 after:h-full after:w-full after:bg-gradient-to-br after:opacity-0 after:transition-opacity group-hover:after:opacity-100',

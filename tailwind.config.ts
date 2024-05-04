@@ -5,9 +5,9 @@ import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
+  // future: {
+  //   hoverOnlyWhenSupported: true,
+  // },
   plugins: [
     radix,
     tailwindCss3d,
@@ -43,7 +43,7 @@ const config: Config = {
           DEFAULT: '#535365',
           dark: '#41404E',
           darker: '#2E2E3A',
-          darkest: '#0D111C',
+          darkest: '#13151C',
           light: '#9A9AAC',
           lighter: '#B0B0Bf',
           lightest: '#F4F4F6',

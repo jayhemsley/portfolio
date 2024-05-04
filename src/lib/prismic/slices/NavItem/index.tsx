@@ -12,10 +12,7 @@ export type NavItemProps = SliceComponentProps<Content.NavItemSlice>;
 export default function NavItem({ slice }: NavItemProps): JSX.Element {
   return (
     <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      Placeholder component for nav_item (variation:
-      {' '}
-      {slice.variation}
-      ) Slices
+      Placeholder component for nav_item (variation: {slice.variation}) Slices
     </section>
   );
 }
