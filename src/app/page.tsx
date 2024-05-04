@@ -1,4 +1,4 @@
-import { createClient } from '@/prismicio';
+import { createClient } from '@/lib/prismic/client';
 import { Card, Hero } from '@/ui';
 
 export default async function HomePage(): Promise<React.ReactElement> {

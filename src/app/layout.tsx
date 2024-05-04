@@ -1,26 +1,29 @@
 import { PrismicPreview } from '@prismicio/next';
 import type { Viewport } from 'next';
 
-import { VIEWPORT_COLOR_SCHEME, VIEWPORT_THEME_COLOR } from '@/constants';
-import { repositoryName } from '@/prismicio';
+import { APP_NAME, META_THEME_COLOR, PRISMIC_REPOSITORY } from '@/constants';
+import { createClient } from '@/lib/prismic/client';
 import { Header } from '@/ui';
 import { cn, createMetadata } from '@/utils';
 
 import { MessinaSans } from './assets/fonts/local';
 import './assets/styles/tailwind.css';
 
-export const metadata = createMetadata({});
+export const metadata = createMetadata();
 
 export const viewport: Viewport = {
-  colorScheme: VIEWPORT_COLOR_SCHEME,
-  themeColor: VIEWPORT_THEME_COLOR,
+  colorScheme: 'light dark',
+  themeColor: META_THEME_COLOR,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}): React.ReactElement {
+}): Promise<React.ReactElement> {
+  const client = createClient();
+  const navLinks = await client.getSingle('nav');
+
   return (
     <html
       lang="en"
@@ -29,9 +32,9 @@ export default function RootLayout({
         MessinaSans.className,
       )}>
       <body>
-        <Header />
+        <Header name={APP_NAME} navLinks={navLinks} />
         <main>{children}</main>
-        <PrismicPreview repositoryName={repositoryName} />
+        <PrismicPreview repositoryName={PRISMIC_REPOSITORY} />
       </body>
     </html>
   );
