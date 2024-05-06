@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Overview, PageLayout } from '@/ui';
+import { Image, Overview, PageLayout } from '@/ui';
 
 import { data } from './data';
 
@@ -33,6 +33,18 @@ export default function DakotaGroupPage(): React.ReactElement {
           nicely and has proved to be a mainstay for the company.
         </p>
       </Overview>
+      <Image
+        src="/images/dakota-group/dakota-group-1.jpg"
+        alt="The Dakota Group's new homepage."
+        width={2576}
+        height={2300}
+      />
+      <Image
+        src="/images/dakota-group/dakota-group-2.jpg"
+        alt="The view of the new contact page."
+        width={2576}
+        height={1473}
+      />
     </PageLayout>
   );
 }

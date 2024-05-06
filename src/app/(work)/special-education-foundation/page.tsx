@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Overview, PageLayout } from '@/ui';
+import { Image, Overview, PageLayout } from '@/ui';
 
 import { data } from './data';
 
@@ -17,11 +17,11 @@ export default function SpecialEducationFoundationPage(): React.ReactElement {
           date: 'January 2019',
           roles: ['Full-Stack Development'],
           technologies: ['PHP', 'WordPress'],
+          design: 'Hub & Spoke Creative',
         }}
         link="https://sef-stl.org">
         <p>
-          While working with the team at
-          {' '}
+          While working with the team at{' '}
           <Link href="https://hubandspokecreative.com" target="_blank">
             Hub & Spoke Creative
           </Link>
@@ -32,8 +32,7 @@ export default function SpecialEducationFoundationPage(): React.ReactElement {
         </p>
         <p>
           Once the agency had a design finalized, I worked with them to ensure that the new website
-          adhered as closely as possible to the
-          {' '}
+          adhered as closely as possible to the{' '}
           <Link href="https://www.w3.org/TR/WCAG20" target="_blank">
             Web Content Accessibility Guidelines
           </Link>
@@ -41,6 +40,12 @@ export default function SpecialEducationFoundationPage(): React.ReactElement {
           their community.
         </p>
       </Overview>
+      <Image
+        src="/images/special-education-foundation/sef-1.jpg"
+        alt="The new Special Education Foundation of St. Louis homepage."
+        width={2576}
+        height={2300}
+      />
     </PageLayout>
   );
 }

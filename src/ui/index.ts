@@ -9,4 +9,5 @@ export { Loader } from './components/loader/loader';
 export { PageLayout } from './layouts/page/page';
 
 // Content Components
-export { Overview } from './content/overview/overview';
+export { Image } from './content/image';
+export { Overview } from './content/overview';

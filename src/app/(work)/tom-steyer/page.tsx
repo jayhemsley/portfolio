@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Overview, PageLayout } from '@/ui';
+import { Image, Overview, PageLayout } from '@/ui';
 
 import { data } from './data';
 
@@ -17,6 +17,7 @@ export default function TomSteyerPage(): React.ReactElement {
           date: 'October 2020',
           roles: ['Front-End Development'],
           technologies: ['TypeScript', 'React', 'Next.js', 'WordPress', 'GraphQL'],
+          design: 'Patronage',
         }}
         link="https://www.tomsteyer.com/">
         <p>
@@ -36,6 +37,24 @@ export default function TomSteyerPage(): React.ReactElement {
           policies for sustainability, clean energy, and equality.
         </p>
       </Overview>
+      <Image
+        src="/images/tom-steyer/tom-steyer-1.jpg"
+        alt="The new candidate map widget for the 2020 election season."
+        width={2576}
+        height={2300}
+      />
+      <Image
+        src="/images/tom-steyer/tom-steyer-2.jpg"
+        alt="The new action center for the website."
+        width={2576}
+        height={2069}
+      />
+      <Image
+        src="/images/tom-steyer/tom-steyer-3.jpg"
+        alt="Mobile views for the new map widget and action center."
+        width={2576}
+        height={2300}
+      />
     </PageLayout>
   );
 }

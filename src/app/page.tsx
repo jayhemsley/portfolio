@@ -12,11 +12,11 @@ export default function HomePage(): React.ReactElement {
     <div className="flex h-full w-full animate-fade-in flex-wrap justify-center">
       <Hero
         title="Full-Stack Developer Based in Atlanta, GA"
-        subtitle="I work with small businesses and public organizations across the world to craft engaging digital experiences."
+        subtitle="I work with small businesses, public organizations and non-profits to craft engaging digital experiences."
       />
       <section className="container grid w-11/12 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:gap-8">
-        <Card href="/motorguild" {...motorguild} variant="large" />
-        <Card href="/tom-steyer" {...tomSteyer} />
+        <Card href="/motorguild" {...motorguild} priority variant="large" />
+        <Card href="/tom-steyer" {...tomSteyer} priority />
         <Card
           href="/special-education-foundation"
           {...specialEducationFoundation}
