@@ -61,7 +61,7 @@ export function Overview({
               className="group inline-flex select-none rounded-2xl bg-secondary-darkest px-5 py-3 font-bold text-secondary-lightest transition-all hover:bg-[--page-theme-ui] hover:shadow-xl hover:scale-105 active:scale-95 dark:bg-secondary-dark dark:hover:bg-[--page-theme-ui-dark]"
               target="_blank">
               Visit Website
-              <ChevronDoubleRightIcon className="ml-1.5 h-auto w-5 transition-transform group-hover:translate-x-1" />
+              <ChevronDoubleRightIcon className="ml-1.5 h-auto w-5 transition-transform will-change-transform group-hover:translate-x-1" />
             </Link>
           </div>
         )}
