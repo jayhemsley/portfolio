@@ -10,6 +10,7 @@ export default function MotorGuildPage(): React.ReactElement {
   return (
     <PageLayout {...data}>
       <Overview
+        subtitle="Coming soon."
         meta={{
           status: 'In Development',
           roles: ['Full-Stack Development', 'UI/UX Design'],
@@ -18,7 +19,7 @@ export default function MotorGuildPage(): React.ReactElement {
         link="https://motorguild.com">
         <p>
           This project is currently under development. Check back soon for more news, or sign up for
-          the waiting list by visiting the site!
+          the waiting list by visiting the link below.
         </p>
       </Overview>
     </PageLayout>

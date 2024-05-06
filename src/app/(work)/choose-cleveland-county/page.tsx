@@ -15,23 +15,19 @@ export default function ChooseClevelandCountyPage(): React.ReactElement {
         subtitle="The Cleveland County Economic Development Partnership works to help new businesses and industries seamlessly establish and expand their presence in their corner of North Carolina."
         meta={{
           date: 'August 2019',
-          roles: ['Front-end Development'],
+          roles: ['Front-End Development'],
           technologies: ['PHP', 'WordPress'],
         }}
         link="https://chooseclevelandcountync.com">
         <p>
-          While contracted with
-          {' '}
+          While contracted with{' '}
           <Link href="http://rdg-one.com" target="_blank">
             RDG
-          </Link>
-          {' '}
-          and
-          {' '}
+          </Link>{' '}
+          and{' '}
           <Link href="https://aboutdci.com" target="_blank">
             DCI
-          </Link>
-          {' '}
+          </Link>{' '}
           I had the opportunity to bring their new design to life. After being provided with the
           design mockups, I built their revamped site on the WordPress, Timber and Advanced Custom
           Fields stack.

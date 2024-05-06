@@ -12,9 +12,8 @@ export default function WvPolicyPage(): React.ReactElement {
       <Overview
         subtitle="The West Virginia Center on Budget & Policy is a non-profit and non-partisan policy research organization serving as a reputable source of credible information on the state's public budget and fiscal issues for both policymakers and the public."
         meta={{
-          status: 'In Development',
-          roles: ['Design', 'Front-end Development'],
-          technologies: ['Sketch'],
+          date: 'August 2018',
+          roles: ['Design', 'Front-End Development'],
         }}
         link="https://wvpolicy.org/">
         <p>
