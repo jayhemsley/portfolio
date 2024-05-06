@@ -1,4 +1,4 @@
-import { Overview, PageLayout } from '@/ui';
+import { Image, Overview, PageLayout } from '@/ui';
 
 import { data } from './data';
 
@@ -29,6 +29,32 @@ export default function WvPolicyPage(): React.ReactElement {
           mobile users an improved experience over the previous iteration.
         </p>
       </Overview>
+      <Image
+        src="/images/wv-policy/wv-policy-1.jpg"
+        alt="WV Policy's new homepage."
+        width={2576}
+        height={2300}
+      />
+      <Image
+        src="/images/wv-policy/wv-policy-2.jpg"
+        alt="A sample widget from the new site."
+        width={2576}
+        height={1072}
+      />
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-6 lg:gap-8 xl:gap-10">
+        <Image
+          src="/images/wv-policy/wv-policy-3.jpg"
+          alt="WV Policy's new homepage on a mobile device."
+          width={1256}
+          height={2300}
+        />
+        <Image
+          src="/images/wv-policy/wv-policy-4.jpg"
+          alt="A sample widget from the new site on a mobile device."
+          width={1256}
+          height={2300}
+        />
+      </div>
     </PageLayout>
   );
 }

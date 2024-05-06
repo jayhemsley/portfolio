@@ -39,6 +39,7 @@ export function Overview({
     status?: string;
     roles?: string[];
     technologies?: string[];
+    design?: string;
   };
   link?: string;
 }): React.ReactElement {
@@ -78,6 +79,7 @@ export function Overview({
             items={meta.technologies}
           />
         )}
+        {meta?.design && <OverviewMeta title="Design By" items={meta.design} />}
       </div>
     </section>
   );

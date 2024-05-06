@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Overview, PageLayout } from '@/ui';
+import { Image, Overview, PageLayout } from '@/ui';
 
 import { data } from './data';
 
@@ -17,6 +17,7 @@ export default function ChooseClevelandCountyPage(): React.ReactElement {
           date: 'August 2019',
           roles: ['Front-End Development'],
           technologies: ['PHP', 'WordPress'],
+          design: 'RDG',
         }}
         link="https://chooseclevelandcountync.com">
         <p>
@@ -37,6 +38,30 @@ export default function ChooseClevelandCountyPage(): React.ReactElement {
           up shop in the county, its key industries, prime properties and more.
         </p>
       </Overview>
+      <Image
+        src="/images/choose-cleveland-county/ccedp-1.jpg"
+        alt="The Cleveland County Economic Development Partnership's new homepage."
+        width={2576}
+        height={2300}
+      />
+      <Image
+        src="/images/choose-cleveland-county/ccedp-2.jpg"
+        alt="A sample subpage from the new website."
+        width={2576}
+        height={2300}
+      />
+      <Image
+        src="/images/choose-cleveland-county/ccedp-3.jpg"
+        alt="A sample subpage from the new website."
+        width={2576}
+        height={2300}
+      />
+      <Image
+        src="/images/choose-cleveland-county/ccedp-4.jpg"
+        alt="Mobile views of the new website."
+        width={2576}
+        height={2300}
+      />
     </PageLayout>
   );
 }
