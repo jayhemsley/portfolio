@@ -44,7 +44,7 @@ export function HeaderImage({
       </div>
       <div
         className={cn([
-          'absolute -bottom-4 left-1/2 -z-10 h-16 w-10/12 blur-xl transition-all -translate-x-1/2 sm:blur-2xl md:-bottom-6 md:w-11/12 lg:h-24',
+          'absolute -bottom-2 left-1/2 -z-10 h-16 w-10/12 blur-xl transition-all -translate-x-1/2 sm:blur-2xl md:-bottom-4 md:w-11/12 lg:h-24',
           imageIsLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8',
         ])}
         style={{
