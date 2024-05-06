@@ -15,8 +15,8 @@ export default function HomePage(): React.ReactElement {
         subtitle="I work with small businesses and public organizations across the world to craft engaging digital experiences."
       />
       <section className="container grid w-11/12 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:gap-8">
-        <Card href="/motorguild" {...motorguild} variant="large" />
-        <Card href="/tom-steyer" {...tomSteyer} />
+        <Card href="/motorguild" {...motorguild} priority variant="large" />
+        <Card href="/tom-steyer" {...tomSteyer} priority />
         <Card
           href="/special-education-foundation"
           {...specialEducationFoundation}

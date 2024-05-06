@@ -25,14 +25,15 @@ export function Card({
   href,
   image,
   themeColors,
+  priority = false,
   className,
 }: {
   href: string;
   className?: string;
+  priority?: boolean;
   variant?: 'small' | 'default' | 'large';
 } & PageData): React.ReactElement {
-  const [backgroundImageIsLoaded, setBackgroundImageIsLoaded] = useState<boolean>(false);
-  const [showDefaultBackground, setShowDefaultBackground] = useState<boolean>(true);
+  const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
 
   return (
     <Tilt
@@ -75,8 +76,8 @@ export function Card({
         )}
         <div
           className={cn([
-            'absolute left-0 top-0 -z-10 h-full w-full overflow-hidden rounded-2xl before:absolute before:left-0 before:top-0 before:z-10 before:h-1/2 before:w-full before:bg-gradient-to-b before:from-secondary-darkest/75 before:to-transparent before:opacity-100 before:transition-opacity',
-            showDefaultBackground && 'bg-gradient-to-br from-secondary to-secondary-darkest',
+            'absolute left-0 top-0 -z-10 h-full w-full overflow-hidden rounded-2xl before:absolute before:left-0 before:top-0 before:z-10 before:h-1/2 before:w-full before:bg-gradient-to-b before:from-secondary-darkest/75 before:opacity-100 before:transition-opacity after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-gradient-to-br after:from-secondary after:to-secondary-darkest after:transition-opacity after:delay-500',
+            imageIsLoaded ? 'after:opacity-0' : 'after:opacity-100',
           ])}>
           <div
             className={cn([
@@ -87,8 +88,8 @@ export function Card({
             style={
               themeColors && themeColors.primary && themeColors.secondary
                 ? {
-                  backgroundImage: `linear-gradient(to bottom right, rgba(${hexToRgb(themeColors.primary)}, 1), rgba(${hexToRgb(themeColors.secondary)}, 0.8)`,
-                }
+                    backgroundImage: `linear-gradient(to bottom right, rgba(${hexToRgb(themeColors.primary)}, 1), rgba(${hexToRgb(themeColors.secondary)}, 0.8)`,
+                  }
                 : undefined
             }
           />
@@ -98,20 +99,18 @@ export function Card({
               alt={image.alt || ''}
               className={cn([
                 'object-cover object-center transition-all group-hover:duration-[45s] group-hover:scale-150',
-                backgroundImageIsLoaded ? 'scale-1 opacity-100' : 'opacity-0 scale-110',
+                imageIsLoaded ? 'scale-1 opacity-100' : 'opacity-0 scale-110',
               ])}
               fill
+              priority={priority}
+              quality={85}
               onLoad={() => {
-                setBackgroundImageIsLoaded(true);
-
-                setTimeout(() => {
-                  setShowDefaultBackground(false);
-                }, 300);
+                setImageIsLoaded(true);
               }}
             />
           )}
         </div>
-        {!backgroundImageIsLoaded && (
+        {!imageIsLoaded && (
           <div
             className="absolute bottom-8 right-8 -z-10 h-8 w-8"
             style={{

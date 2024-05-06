@@ -10,7 +10,7 @@ export const APP_NAME: string = 'Jay Hemsley';
 export const APP_URL: string = 'https://hemsley.dev';
 
 // Meta
-export const META_DESCRIPTION: string = '';
+export const META_DESCRIPTION: string = 'Full-Stack Developer based in Atlanta.';
 export const META_THEME_COLOR: string = '#535365';
 
 // Header
