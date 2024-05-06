@@ -1,10 +1,12 @@
-# Portfolio (2022)
+# Portfolio (2024)
 
 This is the codebase for my portfolio.
 
+In this version, Prismic is no longer used as the data provider for content.
+
 ## Overview
 
-The portfolio is built with [Next.js](https://nextjs.org/), uses [Prismic](https://prismic.io/) for the CMS back-end, and is deployed with [Vercel](https://vercel.com/).
+The portfolio is built with [Next.js](https://nextjs.org/) and is deployed with [Vercel](https://vercel.com/).
 
 ## Getting Started
 
