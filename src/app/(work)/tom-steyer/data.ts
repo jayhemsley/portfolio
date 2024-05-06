@@ -2,7 +2,7 @@ export const data = {
   pretitle: 'Patronage × Tom Steyer',
   title: 'Tom 2020',
   subtitle:
-    'Contributing to the technical side of presidential election efforts by extending a central communications platform.',
+    'Contributing to the technical side of presidential campaign efforts by extending a central communications platform.',
   image: {
     url: '/images/tom-steyer/preview.avif',
     alt: 'Tom Steyer',

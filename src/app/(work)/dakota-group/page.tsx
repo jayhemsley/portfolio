@@ -15,7 +15,7 @@ export default function DakotaGroupPage(): React.ReactElement {
         subtitle="While I was working with Hub & Spoke, their parent company was in need of a simple landing page bringing together all of their creative properties under one umbrella."
         meta={{
           date: 'September 2018',
-          roles: ['Front-end Development'],
+          roles: ['Front-End Development'],
         }}
         link="https://wearedakotagroup.com">
         <p>
@@ -24,21 +24,13 @@ export default function DakotaGroupPage(): React.ReactElement {
           initializing an online presence for the parent company itself.
         </p>
         <p>
-          The site&rsquo;s animations are all CSS-based and use the
-          {' '}
+          The site&rsquo;s animations are all CSS-based and use the{' '}
           <Link href="https://michalsnik.github.io/aos" target="_blank">
             Animate On Scroll
-          </Link>
-          {' '}
+          </Link>{' '}
           CSS library. Given that the site was supposed to be a quick project, it was more efficient
           to use pre-built libraries rather than re-inventing the wheel. The site came together
           nicely and has proved to be a mainstay for the company.
-        </p>
-        <p>
-          Duis auctor nibh lectus, at congue odio auctor mattis. Donec rhoncus odio in libero
-          egestas, ac malesuada nunc bibendum. Integer congue consequat quam, quis semper leo. Nunc
-          ut posuere augue. Vivamus accumsan venenatis lectus a eleifend. Sed laoreet condimentum
-          ante eu ultrices.
         </p>
       </Overview>
     </PageLayout>
