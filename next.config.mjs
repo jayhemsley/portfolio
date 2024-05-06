@@ -2,6 +2,9 @@
 
 const nextConfig = {
   poweredByHeader: false,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

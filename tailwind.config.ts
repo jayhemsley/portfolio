@@ -1,15 +1,12 @@
+import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import tailwindCss3d from 'tailwindcss-3d';
-import radix from 'tailwindcss-radix';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
-  // future: {
-  //   hoverOnlyWhenSupported: true,
-  // },
   plugins: [
-    radix,
+    typography,
     tailwindCss3d,
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
@@ -27,8 +24,7 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'fade-in': 'fadeIn 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards',
-        'fade-in-down': 'fadeInDown 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards',
+        'fade-in': 'fadeIn 1s cubic-bezier(0.39, 0.575, 0.565, 1) forwards',
       },
       colors: {
         primary: {
@@ -45,12 +41,11 @@ const config: Config = {
           darker: '#2E2E3A',
           darkest: '#13151C',
           light: '#9A9AAC',
-          lighter: '#B0B0Bf',
+          lighter: '#B0B0BF',
           lightest: '#F4F4F6',
         },
         accent: {
           pink: '#E54F6D',
-          obsidian: '#0E0E40',
         },
       },
       keyframes: {
@@ -59,8 +54,8 @@ const config: Config = {
           '100%': { opacity: '1' },
         },
         fadeInDown: {
-          '0%': { opacity: '0', translateY: '-1rem' },
-          '100%': { opacity: '1', translateY: '0' },
+          '0%': { opacity: '0', transform: 'translateY(-2rem)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

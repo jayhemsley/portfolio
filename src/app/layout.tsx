@@ -1,8 +1,6 @@
-import { PrismicPreview } from '@prismicio/next';
 import type { Viewport } from 'next';
 
-import { APP_NAME, META_THEME_COLOR, PRISMIC_REPOSITORY } from '@/constants';
-import { createClient } from '@/lib/prismic/client';
+import { APP_NAME, HEADER_LINKS, META_THEME_COLOR } from '@/constants';
 import { Footer, Header } from '@/ui';
 import { cn, createMetadata } from '@/utils';
 
@@ -16,15 +14,11 @@ export const viewport: Viewport = {
   themeColor: META_THEME_COLOR,
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}): Promise<React.ReactElement> {
-  const client = createClient();
-  const navLinks = await client.getSingle('nav');
-  const { data: footer } = await client.getSingle('footer');
-
+}): React.ReactElement {
   return (
     <html
       lang="en"
@@ -33,10 +27,13 @@ export default async function RootLayout({
         MessinaSans.className,
       )}>
       <body>
-        <Header name={APP_NAME} navLinks={navLinks} />
+        <Header title={APP_NAME} links={HEADER_LINKS} />
         <main>{children}</main>
-        <Footer {...footer} />
-        <PrismicPreview repositoryName={PRISMIC_REPOSITORY} />
+        <Footer
+          title="For All Inquiries"
+          email="jay@hemsley.dev"
+          source="https://github.com/jayhemsley/portfolio"
+        />
       </body>
     </html>
   );

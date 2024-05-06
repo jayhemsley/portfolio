@@ -14,7 +14,7 @@ export function createMetadata({
       default: title,
       template: `%s | ${APP_NAME}`,
     },
-    description,
+    description: description ?? null,
     formatDetection: {
       address: false,
       email: false,
@@ -23,7 +23,7 @@ export function createMetadata({
     metadataBase: new URL(APP_URL),
     openGraph: {
       title,
-      description,
+      description: description ?? null,
     },
   };
 }

@@ -59,5 +59,4 @@ coverage
 *.csv
 
 .env*.local
-slicemachine.config.json
 _OLD/
