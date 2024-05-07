@@ -14,12 +14,14 @@ export default function MotorGuildPage(): React.ReactElement {
         meta={{
           status: 'In Development',
           roles: ['Full-Stack Development', 'UI/UX Design'],
-          technologies: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Postgres'],
+          technologies: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Express.js', 'Postgres'],
         }}
         link="https://motorguild.com">
         <p>
-          This project is currently under development. Check back soon for more news, or sign up for
-          the waiting list by visiting the link below.
+          <em>This project is currently under development.</em>
+        </p>
+        <p>
+          Check back soon for more news, or sign up for the waiting list by visiting the link below!
         </p>
       </Overview>
     </PageLayout>

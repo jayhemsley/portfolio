@@ -2,7 +2,7 @@ export const data = {
   pretitle: 'MotorGuild',
   title: "The Internet's Newest Car Meet",
   subtitle:
-    'Building a centralized platform where car enthusiasts can connect both locally and globally with each other.',
+    'Building a centralized social platform where car enthusiasts can connect both locally and globally with each other.',
   image: {
     url: '/images/motorguild/preview.jpg',
     alt: 'A photo of a modified engine bay overlayed with the MotorGuild logo.',
