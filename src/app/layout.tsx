@@ -1,6 +1,6 @@
 import type { Viewport } from 'next';
 
-import { APP_NAME, HEADER_LINKS, META_THEME_COLOR } from '@/constants';
+import { APP_NAME, HEADER_LINKS, META_THEME_COLOR_DARK, META_THEME_COLOR_LIGHT } from '@/constants';
 import { Footer, Header } from '@/ui';
 import { cn, createMetadata } from '@/utils';
 
@@ -10,8 +10,10 @@ import './assets/styles/tailwind.css';
 export const metadata = createMetadata();
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: META_THEME_COLOR,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: META_THEME_COLOR_LIGHT },
+    { media: '(prefers-color-scheme: dark)', color: META_THEME_COLOR_DARK },
+  ],
 };
 
 export default function RootLayout({

@@ -11,7 +11,8 @@ export const APP_URL: string = 'https://hemsley.dev';
 
 // Meta
 export const META_DESCRIPTION: string = 'Full-Stack Developer based in Atlanta.';
-export const META_THEME_COLOR: string = '#535365';
+export const META_THEME_COLOR_DARK: string = '#441208';
+export const META_THEME_COLOR_LIGHT: string = '#F4F4F6';
 
 // Header
 export const HEADER_LINKS: NavLink[] = [
