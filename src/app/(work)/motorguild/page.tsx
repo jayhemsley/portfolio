@@ -16,7 +16,7 @@ export default function MotorGuildPage(): React.ReactElement {
           roles: ['Full-Stack Development', 'UI/UX Design'],
           technologies: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Express.js', 'Postgres'],
         }}
-        link="https://motorguild.com">
+        link="https://motorguild.co">
         <p>
           <em>This project is currently under development.</em>
         </p>
