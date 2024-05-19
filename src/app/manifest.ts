@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-import { APP_NAME, META_THEME_COLOR } from '@/constants';
+import { APP_NAME, META_THEME_COLOR_DARK } from '@/constants';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: APP_NAME,
     start_url: '/',
     display: 'browser',
-    background_color: META_THEME_COLOR,
-    theme_color: META_THEME_COLOR,
+    background_color: META_THEME_COLOR_DARK,
+    theme_color: META_THEME_COLOR_DARK,
     icons: [
       {
         src: '/icon.svg',
