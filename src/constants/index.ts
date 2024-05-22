@@ -1,6 +1,5 @@
 import type { NavLink } from '@/types';
 
-
 // System
 export const IS_DEVELOPMENT: boolean = process.env.NEXT_PUBLIC_VERCEL_ENV === 'development';
 export const IS_PREVIEW: boolean = process.env.NEXT_PUBLIC_VERCEL_ENV === 'development';
@@ -17,12 +16,6 @@ export const META_THEME_COLOR_LIGHT: string = '#F4F4F6';
 
 // Header
 export const HEADER_LINKS: NavLink[] = [
-  {
-    slug: 'resume',
-    title: 'Résumé',
-    href: 'https://drive.google.com/file/d/11nnGAXXAB-Q3A-IPtH5o5YSCD61rQeOh/view',
-    new: true,
-  },
   {
     slug: 'github',
     title: 'GitHub',
