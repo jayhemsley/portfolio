@@ -17,6 +17,12 @@ export const META_THEME_COLOR_LIGHT: string = '#F4F4F6';
 // Header
 export const HEADER_LINKS: NavLink[] = [
   {
+    slug: 'resume',
+    title: 'Résumé',
+    href: 'https://drive.google.com/file/d/1WKGdo5xsekzx--BnsRqWNvQ6J3ULVCR9/view?usp=drivesdk',
+    new: true,
+  },
+  {
     slug: 'github',
     title: 'GitHub',
     href: 'https://github.com/jayhemsley',
