@@ -16,7 +16,7 @@ export default function TomSteyerPage(): React.ReactElement {
         meta={{
           date: 'October 2020',
           roles: ['Front-End Development'],
-          technologies: ['TypeScript', 'React', 'Next.js', 'WordPress', 'GraphQL'],
+          technologies: ['TypeScript', 'React', 'Next.js', 'Postgres', 'GraphQL'],
           design: 'Patronage',
         }}
         link="https://www.tomsteyer.com/">
