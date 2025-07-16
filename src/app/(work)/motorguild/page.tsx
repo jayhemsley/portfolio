@@ -10,18 +10,22 @@ export default function MotorGuildPage(): React.ReactElement {
   return (
     <PageLayout {...data}>
       <Overview
-        subtitle="Coming soon."
+        subtitle="The car enthusiast side of the internet is currently split between multiple platforms, with no centralized community. MotorGuild aims to fix that."
         meta={{
           status: 'In Development',
           roles: ['Full-Stack Development', 'UI/UX Design'],
-          technologies: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Express.js', 'Postgres'],
-        }}
-        link="https://motorguild.co">
+          technologies: [
+            'TypeScript',
+            'React',
+            'Next.js',
+            'Node.js',
+            'Express.js',
+            'Postgres',
+            'Supabase',
+          ],
+        }}>
         <p>
-          <em>This project is currently under development.</em>
-        </p>
-        <p>
-          Check back soon for more news, or sign up for the waiting list by visiting the link below!
+          <em>This project is currently under development. Check back soon for more news!</em>
         </p>
       </Overview>
     </PageLayout>
