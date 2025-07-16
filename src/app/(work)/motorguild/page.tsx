@@ -25,8 +25,14 @@ export default function MotorGuildPage(): React.ReactElement {
           ],
         }}>
         <p>
-          <em>This project is currently under development. Check back soon for more news!</em>
+          <em>Coming soon.</em>
         </p>
+        <p>
+          Active development of this project has been temporarily paused as I look into ways that I
+          can create this platform as a sustainable yet fully open-source, privacy respecting one
+          where users own their data (ActivityPub, anyone?).
+        </p>
+        <p>Check back soon for more news!</p>
       </Overview>
     </PageLayout>
   );
